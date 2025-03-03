@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #444444;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 50px;
+}
+
+.bomb {
+    width: 150px;
+    height: 150px;
+    background-image: url('bomb.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.bomb:hover {
+    background-image: url('boom.png');
+    transform: scale(1.1) rotate(5deg);
+    opacity: 0.9;
+}
+
+.bomb.safe:hover {
+    background-image: url('Extintor.png');
+    transform: scale(1.1) rotate(-5deg);
+    opacity: 0.9;
+}
