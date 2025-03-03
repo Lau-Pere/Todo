@@ -1,36 +1,30 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #444444;
+.cambiador-forma {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: all 0.5s ease;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-gap: 50px;
+.cambiador-forma:hover {
+    background-color: red;
+    border-radius: 50%;   /* Cambia de forma a círculo */
 }
 
-.bomb {
-    width: 150px;
-    height: 150px;
-    background-image: url('bomb.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+
+
+
+
+
+.pelota {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(187, 0, 255);
+    border-radius: 50%;
+    position: relative;
+    animation: rebote 1s infinite; /* Rebota continuamente */
 }
 
-.bomb:hover {
-    background-image: url('boom.png');
-    transform: scale(1.1) rotate(5deg);
-    opacity: 0.9;
-}
-
-.bomb.safe:hover {
-    background-image: url('Extintor.png');
-    transform: scale(1.1) rotate(-5deg);
-    opacity: 0.9;
+@keyframes rebote {
+    0%, 100% { top: 0; } /* Comienza y termina en su posición original */
+    50% { top: 150px; } /* El punto más bajo de la caída */
 }
