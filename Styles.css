@@ -1,5 +1,5 @@
 body {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,7 @@ body {
 
 .logo {
     font-size: 2.5em;
-    color: #fd0d0d;
+    color: #ff0000;
     animation: fadeIn 3s forwards;
 }
 
@@ -26,16 +26,47 @@ body {
     font-size: 1.5em;
     color: #333;
     margin-bottom: 20px;
-    animation: slideInLeft 3s 1s forwards; /* Con un retraso de 1s */
+    animation: slideInLeft 3s 1s forwards;
 }
-
+    
 .imagen img {
-    max-width: 300px;
+    max-width: 100%;
     border-radius: 8px;
-    animation: zoomIn 3s 2s forwards; /* Con un retraso de 2s */
+    animation: zoomIn 3s 2s forwards;
 }
 
-/* Keyframes para las animaciones */
+/* Media Query para Tableta (método antiguo) */
+@media screen and (min-width: 768px) {
+    .anuncio {
+        max-width: 700px;
+        padding: 30px;
+    }
+
+    .logo {
+        font-size: 3em;
+    }
+
+    .slogan {
+        font-size: 2em;
+    }
+}
+
+/* Media Query para Móvil (método moderno) */
+@media (max-width: 480px) {
+    .anuncio {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 2em;
+    }
+
+    .slogan {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
